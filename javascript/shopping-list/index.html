@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💙Shopping List</title>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/7c6ce2eb2a.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- JS -->
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <section class="shopping">
+    <!-- SHOPPING CATEGORY -->
+    <nav class="shopping-category">
+      <ul class="category max-width">
+        <li class="category-name selected" data-filter="all">All</li>
+        <li class="category-name" data-filter="life">Life</li>
+        <li class="category-name" data-filter="food">Food</li>
+        <li class="category-name" data-filter="Study">Study</li>
+        <li class="category-name" data-filter="gift">Gift</li>
+      </ul>
+    </nav>
+    <!-- SHOPPING LISTS -->
+    <section class="shopping-lists max-width">
+      <ul class="lists">    
+      </ul>
+      <p class="lists-price"></p>
+    </section>
+    <!-- SHOPPING CONTROL -->
+    <section class="shopping-control max-width">
+      <button class="control-button control-button_delete" type="button" aria-label="delete all selected"><i class="fa-solid fa-trash-can"></i></button>
+      <div class="control-input-box">
+        <input class="control-input control-input_name" type="text" placeholder="name" aria-label="for name" />
+        <input class="control-input control-input_price" type="text" placeholder="price" aria-label="for price" />
+      </div>
+      <button class="control-button control-button_add" type="button" aria-label="add"><i class="fa-solid fa-plus"></i></button>
+    </section>
+  </section>
+</body>
+</html>

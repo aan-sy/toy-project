@@ -1,0 +1,359 @@
+/* VARIABLE */
+:root {
+  --gradation-main: linear-gradient(0deg, var(--color-main) 0%, rgba(255,255,255,1) 63%);
+  --gradation-main-contrast: linear-gradient(0deg, rgba(255,255,255,1) 0%, var(--color-main-contrast) 62%);
+  --color-main: rgba(45,199,253,1);
+  --color-main-contrast: rgba(136,241,156,1);
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+/* COMMON */
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.max-width {
+  width: 100%;
+  max-width: 19rem;
+  margin: 0 auto;
+}
+
+
+/* *SHOPPING* */
+
+.shopping {
+  background: var(--gradation-main);
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* SHOPPING CATEGORY */
+.shopping-category {
+  background: var(--gradation-main-contrast);
+}
+
+.category {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.category-name {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+  transition: background 300ms ease;
+}
+
+.category-name:hover {
+  background: var(--gradation-main);
+}
+
+.category-name.selected {
+  background: var(--gradation-main);
+}
+
+.category-name.selected::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  background-color: chartreuse;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  opacity: .8;
+}
+
+/* SHOPPING LISTS */
+.shopping-lists {
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.lists {
+  font-size: 1rem;
+  height: 90%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.lists::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+
+}
+
+.list.checked:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  width: 76%;
+  height: 1px;
+  background-color: hotpink;
+}
+
+.list-input-box {
+  display: flex;
+  gap: .5rem;
+  width: 68%;
+
+}
+
+.list-input {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  font: inherit;
+  color: var(--color-main-contrast);
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid var(--color-main-contrast);
+  border-radius: 5px;
+  /* transform: translateY(-0.075em); */
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.list-input::before {
+  content: '';
+  width: .7rem;
+  height: .7rem;
+  transform: scale(0);
+  transition: transform 120ms ease-in-out;
+  box-shadow: inset .5rem .5rem var(--color-main-contrast); /* radio style */
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.list-input:checked:before {
+  transform: scale(1);
+}
+
+.list-name {
+  cursor: pointer;
+}
+
+.list-price {
+  display: block;
+  min-width: 22%;
+  text-align: right;
+}
+
+.list-button_delete {
+  font-size: 1rem;
+  margin-left: auto;
+  transition: transform 300ms ease;
+}
+
+.list-button_delete:hover {
+  transform: rotate(-15deg);
+}
+
+.lists-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .4rem;
+  padding: 1rem 0;
+}
+
+/* SHOPPING CONTROL */
+.shopping-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem;
+  padding: 1rem 0 3.5rem;
+  font-size: 1rem;
+}
+
+.control-button {
+  font-size: 1rem;
+}
+
+.control-button_delete {
+  transition: transform 300ms ease;
+}
+
+.control-button_delete:hover {
+  transform: rotate(15deg);
+}
+
+.control-input-box {
+  width: 75%;
+  margin-left: auto;
+  display: flex;
+  gap: .4rem;
+}
+
+.control-input {
+  padding: 0.5rem;
+  height: 2rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+.control-input_name {
+  width: 58%;
+}
+
+.control-input_price {
+  width: 40%;
+}
+
+.control-button_add {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--color-white);
+}
+
+
+
+@media screen and (min-width: 412px) and (max-width: 768px) {
+  /* COMMON */
+  .max-width {
+    max-width: 24rem;
+  }
+
+  /* SHOPPING CATEGORY */
+  .category {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+
+  .category-name {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  /* SHOPPING LISTS */
+  .list.checked:after {
+    left: 10%;
+    width: 78%;
+  }
+
+  /* SHOPPING CONTROL */
+  .control-input {
+    padding: 0.5rem;
+    height: 2.5rem;
+    border-radius: 30px;
+  }
+
+  .control-button_add {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+
+
+
+@media screen and (min-width: 769px) {
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    background: var(--gradation-main);
+  }
+
+  /* SHOPPING */
+  .shopping {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 369px;
+    height: 750px;
+    min-height: auto;
+    background: center / contain no-repeat url(./images/iphone-mockup.png);
+  }
+
+  .shopping::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1.2rem;
+    width: calc(100% - 2.4rem);
+    height: calc(100% - 2.4rem);
+    background: var(--gradation-main);
+    border-radius: 47px;
+    z-index: -1;
+  }
+
+  .shopping::after {
+    content: '';
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 104px;
+    height: 29px;
+    background: center / contain no-repeat url(./images/iphone-camera-area.png);
+  }
+
+  /* SHOPPING CATEGORY */
+  .shopping-category {
+    margin: 1.2rem 1.2rem 0 1.2rem;
+    border-radius: 46px 46px 0 0;
+  }
+  
+  .category {
+    gap: .5rem;
+  }
+}
