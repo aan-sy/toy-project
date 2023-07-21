@@ -24,6 +24,7 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: var(--color-black);
 }
 
 ul {
@@ -33,7 +34,7 @@ ul {
 
 .max-width {
   width: 100%;
-  max-width: 19rem;
+  max-width: 22rem;
   margin: 0 auto;
 }
 
@@ -59,8 +60,8 @@ ul {
   gap: .8rem;
   align-items: center;
   justify-content: space-between;
-  padding: 3.5rem 0 1rem;
-  font-size: 0.9rem;
+  padding: 2rem 0 1rem;
+  font-size: 1rem;
 }
 
 .category-name {
@@ -70,8 +71,8 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 3.1rem;
-  height: 3.1rem;
+  width: 3.7rem;
+  height: 3.7rem;
   border: 1px solid #000;
   border-radius: 50%;
   transition: background 300ms ease;
@@ -106,12 +107,12 @@ ul {
 }
 
 .lists {
-  font-size: 1rem;
+  font-size: 1.1rem;
   height: 90%;
   overflow-y: auto;
   scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .lists::-webkit-scrollbar {
@@ -127,24 +128,28 @@ ul {
   margin-bottom: 0.7rem;
   border: 1px solid #000;
   border-radius: 10px;
-
 }
 
-.list.checked:after {
+.list.checked::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
-  left: 12%;
-  width: 76%;
+  left: 10%;
+  width: 78%;
   height: 1px;
   background-color: hotpink;
 }
 
+.lists-price {
+  font-size: 1.2rem;
+}
+
 .list-input-box {
   display: flex;
+  align-items: center;
   gap: .5rem;
-  width: 68%;
+  width: 62%;
 
 }
 
@@ -188,18 +193,14 @@ ul {
 
 .list-price {
   display: block;
-  min-width: 22%;
+  min-width: 30%;
   text-align: right;
 }
 
 .list-button_delete {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-left: auto;
   transition: transform 300ms ease;
-}
-
-.list-button_delete:hover {
-  transform: rotate(-15deg);
 }
 
 .lists-price {
@@ -216,24 +217,20 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: .4rem;
-  padding: 1rem 0 3.5rem;
+  padding: 1rem 0 2rem;
   font-size: 1rem;
 }
 
 .control-button {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .control-button_delete {
   transition: transform 300ms ease;
 }
 
-.control-button_delete:hover {
-  transform: rotate(15deg);
-}
-
 .control-input-box {
-  width: 75%;
+  width: 76%;
   margin-left: auto;
   display: flex;
   gap: .4rem;
@@ -241,10 +238,11 @@ ul {
 
 .control-input {
   padding: 0.5rem;
-  height: 2rem;
-  border-radius: 20px;
+  height: 2.5rem;
+  border-radius: 25px;
   outline: none;
   border: none;
+  font-size: 1rem;
 }
 
 .control-input_name {
@@ -256,10 +254,21 @@ ul {
 }
 
 .control-button_add {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background: var(--color-white);
+}
+
+
+@media (hover: hover) {
+  .list-button_delete:hover {
+    transform: rotate(-15deg);
+  }   
+  
+  .control-button_delete:hover {
+    transform: rotate(15deg);
+  }
 }
 
 
@@ -273,7 +282,7 @@ ul {
   /* SHOPPING CATEGORY */
   .category {
     gap: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .category-name {
@@ -282,21 +291,35 @@ ul {
   }
 
   /* SHOPPING LISTS */
-  .list.checked:after {
-    left: 10%;
-    width: 78%;
+  .lists {
+    font-size: 1.2rem;
+  } 
+  .list {
+    padding: 1rem;
+  }
+  .list.checked::after {
+    left: 10.5%;
+    width: 78.5%;
+  }
+  .lists-price {
+    font-size: 1.3rem;
   }
 
   /* SHOPPING CONTROL */
   .control-input {
     padding: 0.5rem;
-    height: 2.5rem;
+    height: 3rem;
     border-radius: 30px;
+    font-size: 1.1rem;
+  }
+
+  .control-button {
+    font-size: 1.3rem;
   }
 
   .control-button_add {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -304,10 +327,15 @@ ul {
 
 
 @media screen and (min-width: 769px) {
+  /* COMMON */
   body {
     width: 100vw;
     min-height: 100vh;
     background: var(--gradation-main);
+  }
+  
+  .max-width {
+    max-width: 20rem;
   }
 
   /* SHOPPING */
@@ -347,6 +375,11 @@ ul {
     background: center / contain no-repeat url(./images/iphone-camera-area.png);
   }
 
+  /* SHOPPING LISTS */
+  .list.checked::after {
+    left: 11.5%;
+  }
+
   /* SHOPPING CATEGORY */
   .shopping-category {
     margin: 1.2rem 1.2rem 0 1.2rem;
@@ -355,5 +388,16 @@ ul {
   
   .category {
     gap: .5rem;
+    padding: 3.5rem 0 1rem;
+  }
+
+  .category-name {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  /* SHOPPING-CONTROL */
+  .shopping-control {
+    padding: 1rem 0 3.5rem;
   }
 }
