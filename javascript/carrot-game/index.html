@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#BA82B8">
+  <title>Collect Carrot Game🥕</title>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7c6ce2eb2a.js" crossorigin="anonymous"></script>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Poppins:wght@900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- JS -->
+  <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+  <!-- GAME -->
+  <section class="game">
+    <h1 class="game__title">당근을 모아서 🥕 <br />당근 케이크를 얻어 보세요 🍰 <br />단, 토끼를 조심하세요 🐰</h1>
+    <button class="game__start"><i class="fa-solid fa-play"></i></button>
+    <button class="game__audio"><i class="fa-solid fa-volume-xmark"></i></button>
+    <!-- GAME - CONTROL -->
+    <section class="game__control">
+      <div class="control__count">
+        <p class="count__life">
+          <span class="life__title">LIFE</span>
+          <span class="life__text">💜💜💜</span>
+        </p>
+        <p class="count__item">
+          <span class="item__title">ITEM</span>
+          <span class="item__text">🥕 x 10</span>
+        </p>
+      </div>
+      <div class="control__timer">00:00</div>
+      <button class="control__pause"><i class="fa-solid fa-pause"></i></button>
+    </section>
+    <!-- GAME - FIELD -->
+    <section class="game__field"></section>
+    <!-- GAME - POP-UP -->
+    <section class="game__popup">
+      <div class="popup__board">
+        <span class="board__msg">message!</span>
+        <button class="board__refresh"><i class="fa-solid fa-rotate-right"></i></button>
+      </div>
+    </section>
+    <audio class="bg" preload="auto" src="./sound/bg.mp3"></audio>
+    <audio class="alert" preload="auto" src="./sound/alert.wav"></audio>
+    <audio class="win" preload="auto" src="./sound/game_win.mp3"></audio>
+    <audio class="item" preload="auto" src="./sound/item_pull.mp3"></audio>
+    <audio class="bomb" preload="auto" src="./sound/bomb_pull.mp3"></audio>
+  </section>
+</body>
+</html>
